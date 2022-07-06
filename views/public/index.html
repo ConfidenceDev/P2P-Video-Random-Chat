@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Vebbo is a free video chat platform, talk with strangers and make new friends"
+    />
+    <meta name="keywords" content="vebbo, vebbo.me, chat, video chat, video" />
+    <meta name="author" content="Vebbo inc." />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/filters.css" />
+    <link rel="stylesheet" type="text/css" href="./css/modal.css" />
+    <link rel="stylesheet" type="text/css" href="./css/media.css" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <title>Vebbo | Talk With Strangers</title>
+  </head>
+  <body>
+    <section class="main container grid">
+      <div class="left">
+        <div class="left_top">
+          <video class="remote" autoplay></video>
+          <img class="logo" src="./assets/icon.png" alt="logo" />
+          <div class="left_top_local">
+            <div class="loading"></div>
+          </div>
+        </div>
+        <div class="left_bottom">
+          <video class="local" autoplay muted></video>
+          <img
+            class="filter_btn"
+            src="./assets/icons/filter.png"
+            alt="filter_btn"
+          />
+          <select class="filter_list" disabled>
+            <option data-rc="none">Normal</option>
+            <option data-rc="blur">Blur</option>
+            <option data-rc="grayscale">Grayscale</option>
+            <option data-rc="sepia">Sepia</option>
+            <option data-rc="brightness">Brightness</option>
+            <option data-rc="contrast">Contrast</option>
+            <option data-rc="hue">Hue</option>
+            <option data-rc="invert">Invert</option>
+            <option data-rc="saturate">Saturate</option>
+          </select>
+        </div>
+        <div class="left_btns_container">
+          <button class="start_stop_btn left_btns">Start</button>
+          <button class="next_btn left_btns" disabled>Next</button>
+        </div>
+      </div>
+      <div class="right">
+        <div class="online_container card">
+          <label class="online_count">...</label>
+          <div class="online"></div>
+        </div>
+        <div class="comment_container card">
+          <label class="typing">Typing...</label>
+          <ul class="comment_list"></ul>
+        </div>
+        <div class="comment_input card">
+          <input
+            type="text"
+            class="comment_field"
+            autocomplete="off"
+            placeholder="Write..."
+            disabled
+          />
+          <img
+            src="./assets/icons/send.png"
+            alt="send"
+            class="send_btn comment_btns"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div id="popup_msg" class="popup_msg overlay">
+      <div class="popup">
+        <h2>Alert</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="details">
+          <p class="pop_msg"></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="popup_guide" class="popup_guide overlay">
+      <div class="popup">
+        <h2>Filters</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="details">
+          <ul>
+            <li>
+              Use filters to enhance and step up your chat, with cool, arts and
+              matching templates to choose from.
+            </li>
+            <li>
+              Disclaimer: filters will remain unlocked until after page is
+              exited or refreshed.
+            </li>
+            <li>
+              For issues, suggestions, inquiries and feedback send us a mail @:
+              stackdriveinc@gmail.com
+            </li>
+          </ul>
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="email_field inputs"
+          />
+          <button class="unlock_btn popup_buttons">Unlock for $0.99</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="mail_img_btn">
+        <a href="mailto:stackdriveinc@gmail.com" target="_blank">
+          <img src="./assets/gmail.png"
+        /></a>
+      </div>
+      <a href="policy.html"><h3 class="terms">Terms &amp; Policy</h3></a>
+      <h3 class="copyright">
+        Vebbo inc &#169; 2022 copyright all rights reserved
+      </h3>
+    </footer>
+
+    <script src="./js/utils.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script
+      src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"
+      defer
+    ></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>
